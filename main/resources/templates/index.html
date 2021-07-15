@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/css/style.css}" href="../static/css/style.css">
+    <title>Pokédex</title>
+</head>
+<body>
+<main>
+    <header>
+        <img th:src="@{/images/full_dex.jpg}" src="../static/images/full_dex.jpg" alt="pokédex banner">
+        <h1><span>Pokédex</span></h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a th:href="@{/index}" href="index.html">Home</a></li>
+            <li><a th:href="@{/register}" href="register.html">Register</a></li>
+            <li><a th:href="@{/profile}" href="profile.html">Profile</a></li>
+            <li><a th:href="@{/pokemon}" href="pokemon.html">Pokemon</a></li>
+            <li><a th:href="@{/pokedex}" href="pokedex.html">Pokédex</a></li>
+        </ul>
+    </nav>
+
+    <article>
+        <script th:src="@{/js/externalLink.js}" src="../static/js/externalLink.js"></script>
+        <!-- Content sourced from the Pokémon(video game series) wikipedia article [https://en.wikipedia.org/wiki/Pok%C3%A9mon_(video_game_series)] -->
+        <p>Pokémon is a series of video games published by <a th:class="externalLink"
+                                                              th:href="@{https://en.wikipedia.org/wiki/Nintendo}"
+                                                              th:target="_blank" class="externalLink"
+                                                              href="https://en.wikipedia.org/wiki/Nintendo"
+                                                              target="_blank">Nintendo</a> and developed by
+            <a th:class="externalLink" th:href="@{https://en.wikipedia.org/wiki/Game_Freak}" th:target="_blank"
+               class="externalLink" href="https://en.wikipedia.org/wiki/Game_Freak" target="_blank">Game Freak</a>
+        </p>
+        <br/>
+
+        <p>
+            Pokémon was first released in Japan in 1996 under the name of 'Pocket Monsters: Red and Green' for the
+            original Game Boy console. Proving popular, it was improved upon, and released as 'Pocket Monsters: Blue' in
+            Japan and 'Pokémon Red and Blue' internationally. Afterwards another remake was introduced in the form of
+            'Pokémon Yellow', developed to make use of the Game Boy Color's colour palette. This marked the so called
+            first generation of Pokémon, introducing the first 151 Pokémon, and taking place in the fictional Kanto
+            region.
+        </p>
+        <br/>
+
+        <p>
+            Pokémon has had 7 more generations since the first, each introducing a host of new Pokémon for players to
+            experience, as well as 20 "core" games and countless other derivative works, from other games set in the
+            universe, to a highly successful animated tv show and movie series.
+        </p>
+        <br/>
+    </article>
+
+    <footer>
+        &copy; James Brown 2019
+    </footer>
+</main>
+</body>
+</html>

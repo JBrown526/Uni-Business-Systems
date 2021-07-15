@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/css/style.css}" href="../static/css/style.css">
+    <title>Add Pokémon</title>
+</head>
+<body>
+<main>
+    <header>
+        <img th:src="@{/images/full_dex.jpg}" src="../static/images/full_dex.jpg" alt="pokédex banner">
+        <h1><span>Add Pokémon</span></h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a th:href="@{/index}" href="index.html">Home</a></li>
+            <li><a th:href="@{/register}" href="register.html">Register</a></li>
+            <li><a th:href="@{/profile}" href="profile.html">Profile</a></li>
+            <li><a th:href="@{/pokemon}" href="pokemon.html">Pokemon</a></li>
+            <li><a th:href="@{/pokedex}" href="pokedex.html">Pokédex</a></li>
+
+        </ul>
+    </nav>
+
+    <article>
+        <section class="addPokemon">
+            <form action="/addPokemon" method="post" th:object="${pokemon}">
+                <fieldset>
+                    <legend>User Information</legend>
+                    <table>
+                        <tr>
+                            <td><label>National Pokédex number:</label></td>
+                            <td><input type="number" th:field="*{dexNum}"/></td>
+                        </tr>
+                        <tr>
+                            <td><label>Name:</label></td>
+                            <td><input type="text" th:field="*{name}"/></td>
+                        </tr>
+                        <tr>
+                            <td><label>Category:</label></td>
+                            <td><input type="text" th:field="*{category}"/></td>
+                        </tr>
+                        <tr>
+                            <td><label>Image file:</label></td>
+                            <td><input type="text" th:field="*{imageFile}"/></td>
+                        </tr>
+                        <tr>
+                            <td><label>First type:</label></td>
+                            <td><input type="text" th:field="*{type1}"/></td>
+                        </tr>
+                        <tr>
+                            <td><label>Second type:</label></td>
+                            <td><input type="text" th:field="*{type2}"/></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><input type="submit" value="addPokemon"/></td>
+                        </tr>
+                    </table>
+                </fieldset>
+            </form>
+        </section>
+    </article>
+
+    <footer>
+        &copy; James Brown 2019
+    </footer>
+</main>
+</body>
+</html>

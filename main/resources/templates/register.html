@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/css/style.css}" href="../static/css/style.css">
+    <title>Pokédex</title>
+</head>
+<body>
+<main>
+    <header>
+        <img th:src="@{/images/full_dex.jpg}" src="../static/images/full_dex.jpg" alt="pokédex banner">
+        <h1><span>Registration</span></h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a th:href="@{/index}" href="index.html">Home</a></li>
+            <li><a th:href="@{/register}" href="register.html">Register</a></li>
+            <li><a th:href="@{/profile}" href="profile.html">Profile</a></li>
+            <li><a th:href="@{/pokemon}" href="pokemon.html">Pokemon</a></li>
+            <li><a th:href="@{/pokedex}" href="pokedex.html">Pokédex</a></li>
+        </ul>
+    </nav>
+
+    <article>
+        <section class="registration">
+            <form action="/register" method="post" th:object="${pokedexUser}">
+                <fieldset>
+                    <legend>User Information</legend>
+                    <table>
+                        <tr>
+                            <td><label>First name:</label></td>
+                            <td><input type="text" th:field="*{firstName}"/></td>
+                        </tr>
+                        <tr>
+                            <td><label>Last name:</label></td>
+                            <td><input type="text" th:field="*{lastName}"/></td>
+                        </tr>
+                        <tr>
+                            <td><label>Email:</label></td>
+                            <td><input type="email" th:field="*{email}"/></td>
+                        </tr>
+                        <tr>
+                            <td><label>Password:</label></td>
+                            <td><input type="password" th:field="*{password}"/></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><input type="submit" value="register"/></td>
+                        </tr>
+                    </table>
+                </fieldset>
+            </form>
+        </section>
+    </article>
+
+    <footer>
+        &copy; James Brown 2019
+    </footer>
+</main>
+</body>
+</html>

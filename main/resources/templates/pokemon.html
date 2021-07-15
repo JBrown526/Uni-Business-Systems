@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/css/style.css}" href="../static/css/style.css">
+    <title>Pokédex</title>
+</head>
+<body th:onload="addElement(${#numbers.formatInteger(pokmonList.size())})">
+<main>
+    <header>
+        <img th:src="@{/images/full_dex.jpg}" src="../static/images/full_dex.jpg" alt="pokédex banner">
+        <h1><span th:text="${pokemon.name}">Pokémon</span></h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a th:href="@{/index}" href="index.html">Home</a></li>
+            <li><a th:href="@{/register}" href="register.html">Register</a></li>
+            <li><a th:href="@{/profile}" href="profile.html">Profile</a></li>
+            <li><a th:href="@{/pokemon}" href="pokemon.html">Pokémon</a></li>
+            <li><a th:href="@{/pokedex}" href="pokedex.html">Pokédex</a></li>
+        </ul>
+    </nav>
+
+    <article>
+        <section class="pokemon">
+            <img th:src="@{${pokemon.imageFile}}"/>
+
+            <table>
+                <tr>
+                    <td><label>Name: </label></td>
+                    <td th:text="${pokemon.name}"></td>
+                </tr>
+                <tr>
+                    <td><label>National dex number: </label></td>
+                    <td th:href="${#numbers.formatDecimal(pokemon.dexNum,3,0)}"></td>
+                </tr>
+                <tr>
+                    <td><label>Category: </label></td>
+                    <td th:text="${pokemon.category}"></td>
+                </tr>
+                <tr>
+                    <td><label>Type(s): </label></td>
+                    <td th:text="${pokemon.type1}"></td>
+                    <td th:text="${pokemon.type2} ?: ''"></td>
+                </tr>
+            </table>
+        </section>
+    </article>
+
+    <footer>
+        &copy; James Brown 2019
+    </footer>
+</main>
+</body>
+</html>

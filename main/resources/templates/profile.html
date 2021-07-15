@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/css/style.css}" href="../static/css/style.css">
+    <title>Pokédex</title>
+</head>
+<body>
+<main>
+    <header>
+        <img th:src="@{/images/full_dex.jpg}" src="../static/images/full_dex.jpg" alt="pokédex banner">
+        <h1><span>Profile</span></h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a th:href="@{/index}" href="index.html">Home</a></li>
+            <li><a th:href="@{/register}" href="register.html">Register</a></li>
+            <li><a th:href="@{/profile}" href="profile.html">Profile</a></li>
+            <li><a th:href="@{/pokemon}" href="pokemon.html">Pokemon</a></li>
+        </ul>
+    </nav>
+
+    <article>
+        <section class="profile">
+            <fieldset>
+                <legend>User Information</legend>
+                <table>
+                    <tr>
+                        <td><label>Name:</label></td>
+                        <td th:text="${pokedexUser.firstName} ?: 'John'">John</td>
+                        <td th:text="${pokedexUser.lastName} ?: 'Doe'">Doe</td>
+                    </tr>
+                </table>
+                <table>
+                    <tr>
+                        <td><label>Email:</label></td>
+                        <td th:text="${pokedexUser.email} ?: 'johndoe@placeholder.com'">johndoe@placeholder.com</td>
+                    </tr>
+                </table>
+            </fieldset>
+        </section>
+    </article>
+
+    <footer>
+        &copy; James Brown 2019
+    </footer>
+</main>
+</body>
+</html>

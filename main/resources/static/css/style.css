@@ -1,0 +1,149 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    line-height: 1.3em;
+    color: #ffd505;
+    background: #003A70;
+}
+
+main {
+    margin: 0 auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: min-content;
+    grid-gap: 1.5rem;
+}
+
+header {
+    grid-column: 1/-1;
+    grid-row: 1;
+}
+
+header img {
+    width: 100%;
+    height: 20rem;
+    filter: brightness(80%);
+}
+
+header h1 {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 5rem;
+    line-height: 1.1;
+    font-weight: bold;
+    color: #3D7DCA;
+}
+
+@supports ((-webkit-text-stroke-color: #3D7DCA)
+  and
+  (-webkit-text-fill-color: #FFCB05)) {
+    header span {
+        color: #FFCB05;
+        -webkit-text-fill-color: #FFCB05;
+        -webkit-text-stroke-color: #3D7DCA;
+        -webkit-text-stroke-width: 3px;
+    }
+}
+
+nav {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+article {
+    grid-column: 2/12;
+    grid-row: 2;
+}
+
+footer {
+    text-align: center;
+    grid-column: 1/-1;
+    grid-row: 3;
+}
+
+nav li {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    display: block;
+    background-color: #3D7DCA;
+    padding: 0.2rem;
+    margin-right: 0.1rem;
+    margin-bottom: 0.1rem;
+}
+
+a:link {
+    color: #FFCB05;
+}
+
+nav a:link {
+    color: #FFCB05;
+}
+
+a:visited {
+    color: #FFCB05;
+}
+
+nav a:visited {
+    color: #FFCB05;
+}
+
+a:hover {
+    color: #3D7DCA;
+}
+
+nav a:hover {
+    color: #003A70;
+}
+
+a:active {
+    color: #003A70;
+}
+
+nav a:active {
+    color: #FFCB05;
+}
+
+@media only screen and (max-width: 30rem) {
+    header img {
+        height: 10rem;
+    }
+
+    header h1 {
+        top: 8%;
+    }
+
+    nav {
+        grid-column: 1/-1;
+    }
+
+    nav li {
+        padding-left: 0.4rem;
+    }
+
+    nav ul {
+        display: flex;
+    }
+
+    article {
+        grid-column: 1/-1;
+        grid-row: 3;
+    }
+
+    footer {
+        grid-row: 4;
+    }
+}
